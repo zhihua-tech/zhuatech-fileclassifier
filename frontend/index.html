@@ -1,0 +1,53 @@
+<!doctype html>
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="知华科技文件智能分类系统，用可解释规则完成文件归类、敏感检查和归档建议。预留 DeepSeek 兼容接口。">
+  <meta name="keywords" content="文件智能分类,文档自动归档,敏感信息识别,企业内容管理,DeepSeek Java,知华科技">
+  <title>ZhuaTech File Classifier｜知华科技文件智能分类系统</title><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css">
+</head>
+<body style="--accent:#126a73;--accent-2:#2a8992">
+  <aside class="sidebar">
+    <a class="brand" href="https://www.zhuatech.cn/" target="_blank"><span class="brand-mark">ZH</span><span><b>知华科技</b><small>FILE CLASSIFIER</small></span></a>
+    <div class="workspace-name"><span>企业工作空间</span><b>上海演示环境⌄</b></div>
+    <nav><button class="nav-item active"><span>▦</span>待分类文件</button>
+      <button class="nav-item "><span>◇</span>分类规则</button>
+      <button class="nav-item "><span>✓</span>敏感检查</button>
+      <button class="nav-item "><span>⌁</span>归档策略</button></nav>
+    <div class="side-card"><b>本地演示模式</b><p>不会调用外部模型，也不会上传真实业务数据。</p><a href="https://www.zhuatech.cn/" target="_blank">访问知华科技官网 ↗</a></div>
+  </aside>
+  <main>
+    <header class="topbar"><div><p>企业文件治理 / 工作台</p><h1>文件智能分类</h1></div><div class="top-actions"><button class="icon-button">⌕</button><button class="icon-button">?</button><span class="avatar">知</span></div></header>
+    <div class="content">
+      <section class="page-head"><div><h2>企业文件治理工作台</h2><p>用可解释规则完成文件归类、敏感检查和归档建议</p></div><button class="primary" id="run-open">＋ 新建分析任务</button></section>
+      <section class="metrics"><article class="metric"><span>待分类</span><strong>46</strong><small>较昨日 +8%</small></article>
+        <article class="metric"><span>今日归档</span><strong>128</strong><small>本周保持稳定</small></article>
+        <article class="metric"><span>敏感提醒</span><strong>5</strong><small>需要优先处理</small></article>
+        <article class="metric"><span>规则命中率</span><strong>93%</strong><small>数据更新于 10:30</small></article></section>
+      <section class="workspace-grid">
+        <article class="panel queue-panel">
+          <header><div><h3>当前处理队列</h3><p>按风险和更新时间排序</p></div><div class="tools"><label>⌕<input id="search" placeholder="搜索记录"></label><button id="refresh">刷新</button></div></header>
+          <div class="table-wrap"><table><thead><tr><th>文件名称</th><th>来源</th><th>建议分类</th><th>敏感等级</th><th>状态</th></tr></thead><tbody><tr data-keywords="华东仓验收清单-v3.xlsx 项目空间 项目交付 内部 待确认"><td><b>华东仓验收清单-v3.xlsx</b></td><td>项目空间</td><td>项目交付</td><td><span class="risk r0">内部</span></td><td>待确认</td></tr>
+            <tr data-keywords="供应商框架协议.pdf 采购共享盘 合同档案 机密 受限"><td><b>供应商框架协议.pdf</b></td><td>采购共享盘</td><td>合同档案</td><td><span class="risk r1">机密</span></td><td>受限</td></tr>
+            <tr data-keywords="产品操作手册.docx 知识中心 产品资料 公开 已归档"><td><b>产品操作手册.docx</b></td><td>知识中心</td><td>产品资料</td><td><span class="risk r2">公开</span></td><td>已归档</td></tr></tbody></table></div>
+          <footer><span>显示 3 条重点记录</span><div><button>‹</button><b>1</b><button>›</button></div></footer>
+        </article>
+        <article class="panel insight-panel">
+          <header><div><span class="eyebrow">AI 辅助分析</span><h3>华东仓验收清单-v3.xlsx</h3><p>项目交付文件归档</p></div><span class="status">待人工确认</span></header>
+          <section class="summary"><b>分析摘要</b><p>文件内容包含项目名称、验收项和客户联系人，建议归入“项目交付/验收材料”，访问范围限制为项目成员。</p></section>
+          <ul class="findings"><li><span>1</span><div><b>识别结果</b><p>识别到验收清单与版本号</p></div><em>94%</em></li>
+              <li><span>2</span><div><b>风险关注</b><p>包含客户联系人字段</p></div><em>82%</em></li>
+              <li><span>3</span><div><b>处理边界</b><p>与华东仓项目目录相似度 92%</p></div><em>76%</em></li></ul>
+          <section class="actions"><b>建议动作</b><label><input type="checkbox"><span>确认目标目录后归档</span></label>
+              <label><input type="checkbox"><span>继承项目成员访问权限</span></label>
+              <label><input type="checkbox"><span>记录分类依据与操作日志</span></label></section>
+          <footer><button class="secondary">查看依据</button><button class="primary" id="approve">确认并进入流程</button></footer>
+        </article>
+      </section>
+      <div class="audit-line"><span>最后同步：2026-08-22 10:30</span><span>所有模型输出均需人工复核 · 上海如静知华信息科技有限公司</span></div>
+    </div>
+  </main>
+  <dialog id="run-dialog"><form method="dialog"><button class="close" value="cancel">×</button><span class="dialog-icon">档</span><h3>新建文件智能分类任务</h3><p>填写演示对象与业务上下文，系统将执行本地确定性规则。</p><label>分析对象<input id="subject" value="华东仓验收清单-v3.xlsx"></label><label>业务场景<input id="scenario" value="项目交付文件归档"></label><label>补充上下文<textarea id="context">请结合当前业务规则给出可解释结果和后续动作。</textarea></label><label class="check"><input id="human-review" type="checkbox" checked> 结果进入人工复核队列</label><button class="primary wide" id="run-submit" value="default">运行演示分析</button><small id="run-status"></small></form></dialog>
+  <div class="toast" id="toast">已确认，任务进入后续流程</div><script src="app.js"></script>
+</body></html>
