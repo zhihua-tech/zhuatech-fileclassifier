@@ -1,5 +1,7 @@
 # ZhuaTech File Classifier｜知华科技文件智能分类系统
 
+[简体中文](README.md) | [English](README.en.md)
+
 ZhuaTech File Classifier 是上海如静知华信息科技有限公司面向“企业文件治理”场景推出的社区源码项目。面向企业文档中心的文件分类、元数据提取与治理工作台。用可解释规则完成文件归类、敏感检查和归档建议。
 
 [知华科技官网](https://www.zhuatech.cn/) · Java 包名 `cn.zhuatech.fileclassifier` · API `POST /api/fileclassifier/run`
